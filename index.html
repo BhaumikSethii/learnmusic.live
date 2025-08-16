@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinSkul</title>
+  <link rel="icon" type="image/x-icon" href="/Transp%20back.png">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="game.js" defer></script>
+</head>
+<body>
+  <header>    
+    <button id="theme-switch">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(42, 45, 52, 1);transform: ;msFilter:;"><path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path></svg>
+    </button>
+  </header>
+<div class="title-container">
+<div class="titled">Choose your own</div>
+<h1 class="title">
+<span class="auto-type">Music</span>         
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed(".auto-type",{
+      strings : ["Guitar ", "Violin ", "Drums ","Ukulele ","Vocals ", "Flute ", "Piano ", "Harmonica ","Harmonuium ", "Music "],
+      typeSpeed : 50,
+      backSpeed : 30,
+      looped : true
+    })
+  </script>
+  <span class="life">Teacher</span>
+</h1>
+</div>
+  <div class="wrapper">
+    <form action="Game.html">
+      <div class="input-box">
+        <input type="text" placeholder="Username" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox">Remember Me</label>
+        <a href="#">Forgot Password</a>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="register-link">
+        <p>Don't have an account? <a href="Signup.html">Register</a></p>
+      </div>
+    </form>
+  </div>
+  <div id="meBody">
+    <div id="about-creator">
+      <h1>About the Creator</h1>
+      <hr>
+      <div class="content">
+        <img src="file:///C:/Users/bhaum/OneDrive/Desktop/RichLife/Creatives/Me.jpg" alt="Creator Image">
+        <div class="text">
+          <p>Hi, I’m <strong>Bhaumik</strong>, the creator of <strong>FinSkul</strong>. I’m a student, entrepreneur, and finance enthusiast with a passion for making financial literacy accessible and engaging. With my experience in sales and creative problem-solving, I’ve built FinSkul to bridge the gap between complex financial concepts and real-world decision-making.</p>
+          <p>My goal is simple: to help people understand money in a practical, hands-on way through interactive experiences. Whether you're a beginner or someone with financial knowledge, FinSkul offers something valuable for everyone.</p>
+          <p><em>Let’s navigate the journey of financial success together!</em></p>
+            <div class="buttonspace">
+              <a href="www.profile.com">
+              <div class="meButton">Learn More..</div>
+            </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
