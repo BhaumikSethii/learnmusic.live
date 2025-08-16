@@ -6,48 +6,18 @@
   font-family: 'League spartan' ;
   overflow-x: hidden;
 }
-.heading {
-  font-size: 22px;
-  color: var(--text-color);
-  margin-bottom: 8px;
-  text-align: center;
-  font-weight: 500;
-}
-
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 70px; /* reduced so it doesn’t dwarf the heading */
-  font-weight: bold;
-  color: var(--text-color);
-  text-shadow: 2px 2px 5px var(--slight-opac);
-  letter-spacing: -2px;
-}
-
-.life {
-  color: #27ae60;
-}
-
-#dynamic-word {
-  display: inline-block;
-  min-width: 150px; /* prevents shifting while typing */
-  text-align: right;
-}
-
 
 body {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-  min-height: 120vh;
+  flex-direction: column;
+  justify-content: flex-start; /* instead of center */
+  align-items: center;
+  min-height: 110vh;
   background: var(--base-color);
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
-
 /* Theme Variables */
 :root {
   --base-color: white;
@@ -163,19 +133,36 @@ body {
 }
 
 /* Title Style */
-.title {
-  position: absolute;
-  margin-top: -12%;
-  display: inline-block; /* Ensures the text is in one line */
-  position: relative; /* Keeps the position relative to the wrapper */
-  font-size: 150px; /* Adjust size as needed */
+.title-container {
+  display: flex;
+  flex-direction: column;   /* Stack items vertically */
+  align-items: center;      /* Center horizontally */
+  justify-content: flex-end; /* Push content to the bottom of container */
+  min-height: 40vh;         /* You can adjust as needed */
+  text-align: center;
+  padding-bottom: 2px;     /* Optional spacing from bottom */
+}
+
+.titled {
+  font-size: 50px;
   font-weight: bold;
   z-index: 10;
   color: var(--text-color);
   text-shadow: 2px 2px 5px var(--slight-opac);
   pointer-events: none;
-  white-space: nowrap; /* Prevent wrapping of text */
-  margin-bottom: 20px; /* Distance from the login box */
+  white-space: nowrap;
+  margin-bottom: 6px; /* space between titled and title */
+  letter-spacing: -2px;
+}
+
+.title {
+  font-size: 150px;
+  font-weight: bold;
+  z-index: 10;
+  color: var(--text-color);
+  text-shadow: 2px 2px 5px var(--slight-opac);
+  pointer-events: none;
+  white-space: nowrap;
   letter-spacing: -7px;
 }
 
@@ -228,6 +215,10 @@ body {
 
 .darkmode #theme-switch svg:last-child{
   display: block;
+}
+
+.typed-cursor {
+  display: none !important;
 }
 
 
@@ -370,6 +361,4 @@ p {
     transform: translateY(110vh) rotate(360deg);
     opacity: 0.7;
   }
-
 }
-
