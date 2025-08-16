@@ -12,29 +12,28 @@
   <script type="text/javascript" src="game.js" defer></script>
 </head>
 <body>
-  <header>
-    <button id="fullscreen" onclick="toggleFullscreen()" >
-      <svg id="enter-fullscreen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
-        style="fill: var(--text-color); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-        <path d="M5 5h5V3H3v7h2zm5 14H5v-5H3v7h7zm11-5h-2v5h-5v2h7zm-2-4h2V3h-7v2h5z"></path>
-      </svg>
-      
-      <svg id="exit-fullscreen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
-        style="fill: var(--text-color); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; pointer-events: none;">
-        <path d="M10 4H8v4H4v2h6zM8 20h2v-6H4v2h4zm12-6h-6v6h2v-4h4zm0-6h-4V4h-2v6h6z"></path>
-      </svg>
-    </button>
-    
+  <header>    
     <button id="theme-switch">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(42, 45, 52, 1);transform: ;msFilter:;"><path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path></svg>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path></svg>
     </button>
   </header>
-  <div class="heading">Choose your own</div>
-  <div class="title">
-  <span id="dynamic-word">Music</span><span class="life">Teacher</span>
-  </div>
-
+<div class="title-container">
+<div class="titled">Choose your own</div>
+<h1 class="title">
+<span class="auto-type">Music</span>         
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed(".auto-type",{
+      strings : ["Guitar ", "Violin ", "Drums ","Ukulele ","Vocals ", "Flute ", "Piano ", "Harmonica ","Harmonuium ", "Music "],
+      typeSpeed : 50,
+      backSpeed : 30,
+      looped : true
+    })
+  </script>
+  <span class="life">Teacher</span>
+</h1>
+</div>
   <div class="wrapper">
     <form action="Game.html">
       <div class="input-box">
@@ -76,4 +75,3 @@
   </div>
 </body>
 </html>
-
