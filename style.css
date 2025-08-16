@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   justify-content: flex-start; /* instead of center */
   align-items: center;
-  min-height: 110vh;
+  min-height: 120vh;
   background: var(--base-color);
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -173,7 +173,7 @@ body {
 
 /* Divider Style */
 .divider {
-  margin-top: 12vh;
+  margin-top: 14vh;
   width: 100%;
   background-color: #27ae60;
   /* height: 90vh; Relative to screen height */
@@ -286,40 +286,11 @@ body {
   color: var(--trans-color);
 }
 
-#fullscreen {
-  position: fixed;
-  height: 50px;
-  width: 50px;
-  padding: 0%;
-  border-radius: 50%;
-  background-color: var(--base-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 20px;
-  left: 20px;
-  z-index: 9999;
-}
-
-#fullscreen svg{
-  fill: var(--base-color);
-}
-
-#fullscreen svg:last-child{
-  display: block;
-}
-
-.fullscreen #theme-switch svg:first-child{
-  display: block;
-}
-
-.fullscreen #theme-switch svg:last-child{
-  display: none;
-}
 
 #meBody {
-  position: absolute;
-  top: 100%;
+  margin-top: 11%;
+  position: static;
+  top: 120%;
   background-color: #27ae60;
   z-index: 9999;
 }
@@ -361,4 +332,82 @@ p {
     transform: translateY(110vh) rotate(360deg);
     opacity: 0.7;
   }
+}
+
+/* FAQ Section */
+/* FAQ Section */
+.faq {
+  position: static;
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  color: #2a2d34;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  background: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+  width: 100%;
+  background: #fff;
+  border: none;
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #2a2d34;
+  outline: none;
+  position: relative;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 20px;
+  transition: transform 0.25s ease;
+}
+
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+/* Collapsible answer: height animated via JS */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #fafafa;
+  padding: 0 20px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  will-change: max-height;
+  color: #2a2d34;   /* ensure text is visible */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+  /* fallback in case JS doesn't apply height */
+.faq-item[open] .faq-answer {
+  padding: 12px 25px 25px 18px;
 }
