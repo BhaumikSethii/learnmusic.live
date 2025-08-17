@@ -144,7 +144,8 @@ body {
 }
 
 .titled {
-  font-size: 50px;
+  position: relative;
+  font-size: clamp(20px, 5vw, 50px); /* scales with screen width */
   font-weight: bold;
   z-index: 10;
   color: var(--text-color);
@@ -152,18 +153,34 @@ body {
   pointer-events: none;
   white-space: nowrap;
   margin-bottom: 6px; /* space between titled and title */
-  letter-spacing: -2px;
+  letter-spacing: -0.1em;
 }
 
 .title {
-  font-size: 150px;
+  font-size: clamp(40px, 12vw, 150px); /* responsive font */
   font-weight: bold;
   z-index: 10;
   color: var(--text-color);
   text-shadow: 2px 2px 5px var(--slight-opac);
   pointer-events: none;
-  white-space: nowrap;
-  letter-spacing: -7px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  white-space: normal; /* allow wrapping */
+  word-break: keep-all;
+}
+
+/* By default, keep both words on the same line */
+.title .word1,
+.title .word2 {
+  display: inline-block;
+}
+
+/* On smaller screens, force "Teacher" to the next line */
+@media (max-width: 600px) {
+  .title .word2 {
+    display: block;
+    margin-top: 0.2em; /* small spacing between lines */
+  }
 }
 
 /* Highlight "Life" */
