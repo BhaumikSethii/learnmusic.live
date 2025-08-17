@@ -23,4 +23,62 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.querySelectorAll('.options').forEach(group => {
+  const buttons = group.querySelectorAll('.option');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // remove selection from siblings
+      buttons.forEach(b => b.classList.remove('selected'));
+      // select clicked one
+      btn.classList.add('selected');
+    });
+  });
+});
 
+// ✅ Initialize Supabase (no process.env in the browser)
+const SUPABASE_URL = 'https://tncvhgmpqcltlpakgask.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRuY3ZoZ21wcWNsdGxwYWtnYXNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU0MTUxODIsImV4cCI6MjA3MDk5MTE4Mn0.fwXZbvrF5smOgzuMRLAD3bC7b2VKqmyQCgMACJC2VYY';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// (kept) button selections
+document.querySelectorAll(".option").forEach(button => {
+  button.addEventListener("click", () => {
+    const group = button.parentElement;
+    group.querySelectorAll(".option").forEach(btn => btn.classList.remove("selected"));
+    button.classList.add("selected");
+  });
+});
+
+// (kept) submit handler
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("musicForm");
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Collect answers
+    const answers = {};
+    document.querySelectorAll(".options").forEach(group => {
+      const question = group.getAttribute("data-question");
+      const selected = group.querySelector(".selected");
+      answers[question] = selected ? selected.innerText : null;
+    });
+
+    console.log("Submitting:", answers);
+
+    // Insert into Supabase
+    const { data, error } = await supabase
+      .from("Responses")
+      .insert([answers]);
+
+    if (error) {
+      console.error("Supabase error:", error);
+      alert("❌ Error: " + error.message);
+    } else {
+      alert("✅ Thanks! Your response has been recorded 🎶");
+      form.reset();
+      document.querySelectorAll(".option").forEach(btn => btn.classList.remove("selected"));
+    }
+  });
+});
