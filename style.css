@@ -157,7 +157,7 @@ body {
 }
 
 .title {
-  font-size: clamp(40px, 12vw, 150px); /* responsive font */
+  font-size: clamp(40px, 12vw, 100px); /* responsive font */
   font-weight: bold;
   z-index: 10;
   color: var(--text-color);
@@ -428,3 +428,4 @@ p {
 .faq-item[open] .faq-answer {
   padding: 12px 25px 25px 18px;
 }
+
