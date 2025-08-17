@@ -10,14 +10,16 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="game.js" defer></script>
-  <script src="faq.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
 </head>
 <body>
   <!-- Header -->
@@ -36,9 +38,9 @@
 
   <!-- Title Section -->
   <div class="title-container">
-    <div class="titled">Choose your own</div>
+    <div class="titled subtitle">Choose your own</div>
     <h1 class="title" id="title">
-      <span class="auto-type word1">Music</span>
+      <span class="auto-type word1">Music </span>
       <span class="life word2">Teacher</span>
     </h1>
   </div>
@@ -46,7 +48,7 @@
   <!-- Typed.js Initialization -->
   <script>
     new Typed(".auto-type", {
-      strings: ["Guitar", "Violin", "Drums", "Ukulele", "Vocals", "Flute", "Piano", "Harmonica", "Harmonium", "Music"],
+      strings: ["Guitar ", "Violin ", "Drums ", "Ukulele ", "Vocals ", "Flute ", "Piano ", "Harmonica", "Harmonium", "Music"],
       typeSpeed: 50,
       backSpeed: 30,
       loop: true
@@ -54,9 +56,9 @@
   </script>
 
   <!-- Login Form -->
-  <div class="wrapper">
-    <form action="Game.html">
-      <div class="input-box">
+  <!-- <div class="wrapper">
+    <form action="Game.html"> -->
+      <!-- <div class="input-box">
         <input type="text" placeholder="Username" required>
         <i class='bx bxs-user'></i>
       </div>
@@ -75,8 +77,75 @@
 
       <div class="register-link">
         <p>Don't have an account? <a href="Signup.html">Register</a></p>
-      </div>
-    </form>
+      </div> -->
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music School Preference Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="form-container">
+    <h1>Tell us about your music journey </h1>
+<form id="musicForm">
+
+  <!-- Question 1 -->
+  <label>1. What do you want to learn?</label>
+  <div class="options" data-question="instrument">
+    <button type="button" class="option">Guitar</button>
+    <button type="button" class="option">Piano</button>
+    <button type="button" class="option">Drums</button>
+    <button type="button" class="option">Singing</button>
+    <button type="button" class="option">Violin</button>
+    <button type="button" class="option">Ukulele</button>
+  </div>
+
+  <!-- Question 2 -->
+  <label>2. Would you be interested in learning music remotely?</label>
+  <div class="options" data-question="remote">
+    <button type="button" class="option">Yes</button>
+    <button type="button" class="option">No</button>
+    <button type="button" class="option">Maybe</button>
+  </div>
+
+  <!-- Question 3 -->
+  <label>3. How do you imagine your lessons?</label>
+  <div class="options" data-question="lessonType">
+    <button type="button" class="option">Solo</button>
+    <button type="button" class="option">Small Group</button>
+  </div>
+
+  <!-- Question 4 -->
+  <label>4. How often would you show up?</label>
+  <div class="options" data-question="frequency">
+    <button type="button" class="option">Once a week</button>
+    <button type="button" class="option">Twice a week</button>
+    <button type="button" class="option">Almost every day</button>
+  </div>
+
+  <!-- Question 5 -->
+  <label>5. How much would you pay per month?</label>
+  <div class="options" data-question="price">
+    <button type="button" class="option">< $20</button>
+    <button type="button" class="option">$20–$50</button>
+    <button type="button" class="option">$50–$100</button>
+    <button type="button" class="option">$100+</button>
+  </div>
+
+  <!-- Question 6 -->
+  <label>6. Would you try a free trial class?</label>
+  <div class="options" data-question="trial">
+    <button type="button" class="option">Yes</button>
+    <button type="button" class="option">No</button>
+  </div>
+
+  <button type="submit" class="submit-btn">Rock On & Submit</button>
+</form>
+
+
   </div>
 
   <!-- About Section -->
@@ -134,7 +203,11 @@
     </div>
   </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="faq.js" defer></script>
+<script src="game.js" defer></script>
 
 </body>
 </html>
